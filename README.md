@@ -29,6 +29,9 @@ High-frequency tracking current-injection waveform written for [AxoGraph Data Ac
 
 ---
 
-###Igor Pro
+### Igor Pro
+
+[Igor Pro](https://www.wavemetrics.com) from Wavemetrics - Technical graphing and data analysis software for scientists and engineers
 
 [OU-HTF-i-noise-script.pxp](https://github.com/hamadaio/neuroscience-ephys-scripts/blob/main/OU-HTF-i-noise-script.pxp)
+
