@@ -3,9 +3,16 @@
 
 ## High-frequency tracking
 
-High-frequency tracking current-injection protocols written for [AxoGraph Data Acquisition software](https://axograph.com).
+Injection of in vivo-like sinewave noisy currents.
 
-Used by [Guilherme et al.](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002007) in PLoS. 
+Sinusoidal noisy current injections to probe response dynamics of pyramidal cells under in vivo-like conditions.
+ 
+Final waveform I-noise is generated as a realization of [Ornstein-Uhlenbeck Stochastic Process](https://www.sciencedirect.com/topics/mathematics/ornstein-uhlenbeck-process) with zero-mean variance s^2 [Rauch et al. J Neurophysiol (2003) 90: 1598–1612](https://journals.physiology.org/doi/abs/10.1152/jn.00293.2003)
+waveform is based on: [Kondgen et al. Cerebral Cortex (2008) 18(9): 2086-2097](https://academic.oup.com/cercor/article/18/9/2086/354095?login=true)
+
+---
+
+High-frequency tracking current-injection waveform written for [AxoGraph Data Acquisition software](https://axograph.com).
 
 
 [high-frequency-tracking-protocol_v1.axtx](https://github.com/hamadaio/axograph-protocol/blob/main/high-frequency-tracking-protocol_v1.axtx)
