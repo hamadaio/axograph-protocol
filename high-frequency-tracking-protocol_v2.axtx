@@ -1,0 +1,156 @@
+
+T_0_1 = 500;
+T_HYP = 500;
+T_0_2 = 500;
+T_DEP = 500;
+T_0_3 = 500;
+T_FIX = 5000;
+T_PULSE = 20000;
+T_REC = 500;
+
+
+
+
+program "HFT_Hamada"
+{
+	double ttotal;
+	double Izero = 200;	
+	double dt = 0.2;
+	double sineAmp = 50;
+	double f = 5;	
+	double tau = 1;
+	double s = 1;
+	double taufix = 1;
+	double sfix = 1;
+
+	int numberOfElements
+	int i;
+	
+	double time[ 0 ];	
+	double Inoise[ 0 ];
+	double Isin[ 0 ];
+	double Isignal[ 0 ];
+	double current[ 0 ];
+	
+	string fileName;
+	int window;
+	int currentCommandChannel = 1;
+	
+	PoseDialog( "Generate HFT protocol", 
+				"T_0_1", T_0_1,
+				"T_HYP", T_HYP,
+				"T_0_2", T_0_2,
+				"T_DEP", T_DEP,
+				"T_0_3", T_0_3,
+				"T_FIX", T_FIX,
+				"T_PULSE", T_PULSE,
+				"T_REC", T_REC );
+	
+	
+	PoseDialog( "HFT waveform parameters", 
+				"Izero", Izero,
+				"sineAmp", sineAmp,
+				"dt", dt,
+				"f", f,
+				"tau", tau,
+				"s", s,
+				"taufix", taufix,
+				"sfix", sfix );
+				
+								
+	ttotal=T_0_1+T_HYP+T_0_2+T_DEP+T_0_3+T_FIX+T_PULSE+T_REC; 
+	numberOfElements = ttotal / dt;
+	
+	SetArraySize( Inoise, numberOfElements );	
+	SetArraySize( Isin, numberOfElements );
+	SetArraySize( Isignal, numberOfElements );
+	SetArraySize( time, numberOfElements );
+	SetArraySize( current, numberOfElements );
+	
+	SetArray( Inoise, 0 );
+	SetArray( Isin, 0 );
+	SetArray( Isignal, 0 );
+	FillArray( time, dt, dt );
+	
+	i=0;
+	
+	while(time[i]<T_0_1)
+	{
+	    i=i+1;  
+	}
+	   	
+	lasttime=time[i];
+	
+	while(time[i]<T_HYP+lasttime)
+	{
+	    Isignal[i]=-100;
+	    
+	    i=i+1;
+	}   
+	
+	lasttime=time[i];
+
+
+	while(time[i]<T_0_2+lasttime)
+	{
+	    i=i+1;  
+	}
+
+
+	lasttime=time[i];
+	
+	while(time[i]<T_DEP+lasttime)
+	{
+	    Isignal[i]=100;
+	    
+	    i=i+1;
+	}   
+
+	lasttime=time[i];
+	
+	while(time[i]<T_0_3+lasttime)
+	{
+	    i=i+1;  
+	 
+	 }   
+	
+
+	lasttime=time[i];	
+	
+	while(time[i]<T_FIX+lasttime)
+	{
+	    Isignal[i]=Izero;
+	   
+	    Inoise[i]=Inoise[i-1]*(1-(dt/taufix))+sfix*sqrt(2*dt/taufix)*(2*random()-1);
+
+	    i=i+1;
+	}
+	
+	lasttime=time[i];
+	
+	while(time[i]<T_PULSE+lasttime)
+	{
+	    Isignal[i]=Izero;
+	    
+	    Isin[i]=sineAmp*sin(2*pi*(f*0.001)*time[i]);
+	    
+	    Inoise[i]=Inoise[i-1]*(1-(dt/tau))+s*sqrt(2*dt/tau)*(2*random()-1);
+
+	    i=i+1;  
+	   
+	}
+	
+	current=Isignal+Isin+Inoise;
+	
+		// Open a graph window and pass it the command waveform 
+	fileName = NewFileName ( tr( "High Frequency Protocol" ) );
+	window = NewGraph ( fileName );
+	xData( window ) = time;
+	SetXTitle ( window, "Time (ms)" );
+	eData( window, currentCommandChannel, 1 ) = current;
+	SetGroupTitle ( window, currentCommandChannel, "Current (pA)" );
+	DefaultAxes ( window );
+	
+	convert_to_protocol();
+}
+
