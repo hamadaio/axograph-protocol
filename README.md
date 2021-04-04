@@ -1,4 +1,4 @@
-# I-noise Current Injection Protocols
+# I-noise current injection protocol
 
 
 ## Overview
