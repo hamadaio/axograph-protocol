@@ -26,3 +26,9 @@ High-frequency tracking current-injection waveform written for [AxoGraph Data Ac
 ### MatLab
 
 [HFT-i-noise-process-OU.m](https://github.com/hamadaio/axograph-protocol/blob/main/HFT-i-noise-process-OU.m)
+
+---
+
+###Igor Pro
+
+[OU-HTF-i-noise-script.pxp](https://github.com/hamadaio/neuroscience-ephys-scripts/blob/main/OU-HTF-i-noise-script.pxp)
