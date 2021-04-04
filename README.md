@@ -1,4 +1,4 @@
-# axograph-protocol
+# AxoGraph Protocols
 
 High-frequency tracking current-injection protocols in AxoGraph.
 
