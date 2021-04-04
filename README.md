@@ -1,7 +1,7 @@
-# AxoGraph Protocols
+# I-noise Current Injection Protocols
 
 
-## High-frequency tracking
+## Overview
 
 Injection of in vivo-like sinewave noisy currents.
 
@@ -12,6 +12,8 @@ waveform is based on [Kondgen et al. Cerebral Cortex (2008) 18(9): 2086-2097](ht
 
 ---
 
+### AxoGraph Protcol
+
 High-frequency tracking current-injection waveform written for [AxoGraph Data Acquisition software](https://axograph.com).
 
 
@@ -19,4 +21,8 @@ High-frequency tracking current-injection waveform written for [AxoGraph Data Ac
 
 [high-frequency-tracking-protocol_v2.axtx](https://github.com/hamadaio/axograph-protocol/blob/main/high-frequency-tracking-protocol_v2.axtx)
 
+---
 
+### MatLab
+
+[HFT-i-noise-process-OU.m](https://github.com/hamadaio/axograph-protocol/blob/main/HFT-i-noise-process-OU.m)
