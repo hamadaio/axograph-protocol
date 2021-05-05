@@ -21,6 +21,16 @@ High-frequency tracking current-injection waveform written for [AxoGraph Data Ac
 
 [high-frequency-tracking-protocol_v2.axtx](https://github.com/hamadaio/axograph-protocol/blob/main/high-frequency-tracking-protocol_v2.axtx)
 
+```
+Izero = 100;	// DC step to generate 10Hz baseline AP
+dt = 0.02;
+sineAmp = 50;	// sinewave amplitude
+f = FREQ*0.001;
+tau = 3;
+s = 50;
+taufix = 3;
+sfix = 10;
+```
 ![Screenshot 2021-05-05 at 15 38 12](https://user-images.githubusercontent.com/42112716/117150087-1f8f3a00-adb8-11eb-9811-9db5bf4c47c1.png)
 
 
