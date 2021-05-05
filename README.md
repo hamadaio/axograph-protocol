@@ -24,6 +24,8 @@ High-frequency tracking current-injection waveform written for [AxoGraph Data Ac
 ![Screenshot 2021-05-05 at 15 38 12](https://user-images.githubusercontent.com/42112716/117150087-1f8f3a00-adb8-11eb-9811-9db5bf4c47c1.png)
 
 
+![Screenshot 2021-05-05 at 15 38 39](https://user-images.githubusercontent.com/42112716/117150262-451c4380-adb8-11eb-82c9-03e647971056.png)
+
 ---
 
 ### MatLab
