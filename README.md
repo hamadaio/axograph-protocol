@@ -3,7 +3,7 @@
 
 ## Overview
 
-Injection of in vivo-like sinewave noisy currents.
+Injection of _in vivo_-like sinewave noisy currents.
 
 Sinusoidal noisy current injections to probe response dynamics of pyramidal cells under in vivo-like conditions.
  
