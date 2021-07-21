@@ -1,4 +1,4 @@
-# Curreent noise injection protocol
+# Current noise injection protocol
 
 
 ## Overview
