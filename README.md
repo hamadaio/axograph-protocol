@@ -5,7 +5,7 @@
 
 Injection of _in vivo_-like sinewave noisy currents.
 
-Sinusoidal noisy current injections to probe response dynamics of pyramidal cells under in vivo-like conditions.
+Sinusoidal noisy current injections to probe response dynamics of pyramidal cells under _in vivo_-like conditions.
  
 Final waveform I-noise is generated as a realization of [Ornstein-Uhlenbeck Stochastic Process](https://www.sciencedirect.com/topics/mathematics/ornstein-uhlenbeck-process) with `zero-mean variance s^2` ([Rauch et al. J Neurophysiol (2003) 90: 1598–1612](https://journals.physiology.org/doi/abs/10.1152/jn.00293.2003))
 waveform is based on [Kondgen et al. Cerebral Cortex (2008) 18(9): 2086-2097](https://academic.oup.com/cercor/article/18/9/2086/354095?login=true)
